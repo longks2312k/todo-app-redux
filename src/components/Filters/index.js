@@ -10,7 +10,7 @@ export default function Filters() {
 
   const [searchText, setSearchText] = useState('');
   const [filtersStatus, setFiltersStatus] = useState('All');
-  const [filtersPriority, setFiltersPriority] = useState([]);
+  const [filtersPriorities, setFiltersPriorities] = useState([]);
 
   const handleSearchChangeText = (e) => {
     setSearchText(e.target.value)
@@ -22,8 +22,8 @@ export default function Filters() {
     dispatch(statusFilterChange(e.target.value))
   }
 
-  const handlePriorityChange = (value) => {
-    setFiltersPriority(value)
+  const handlePrioritiesChange = (value) => {
+    setFiltersPriorities(value)
     dispatch(prioritiesFilterChange(value))
   }
   
@@ -59,8 +59,8 @@ export default function Filters() {
           mode='multiple'
           allowClear
           placeholder='Please select'
-          value={filtersPriority}
-          onChange={handlePriorityChange}
+          value={filtersPriorities}
+          onChange={handlePrioritiesChange}
           style={{ width: '100%' }}
         >
           <Select.Option value='High' label='High'>
